@@ -7,7 +7,7 @@ let currentRoundNumber = 1;
 
 //function declaration
 function generateTarget(){
-    return Math.floor(Math.random()*10);
+    return Math.floor(Math.random()*10); // random 0-9
 }
 
 //Math.abs = used to calculate the absolute value of a number. The absolute value of a number is its distance from zero on the number line, ignoring the sign (positive or negative). In other words, it returns the positive value of a number, even if the original number is negative.
@@ -30,4 +30,14 @@ function compareGuesses(userGuess, computerGuess, targetNumber) {
     }
   }
 
-  
+  function updateScore(winner) {
+    if (winner === "human") {
+        humanScore += 1; // Increment the human score by 1
+      } else {
+        computerScore += 1; // Increment the computer score by 1
+      }
+  }
+
+  function advanceRound() {
+    currentRoundNumber++;
+  }
